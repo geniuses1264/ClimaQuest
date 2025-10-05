@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 const Welcome = () => {
   return (
     //import background image and set it as the background of the welcome page 
-  <section className=" bg-[url('/src/assets/backgroundimage.png')] bg-cover bg-center h-screen flex flex-col justify-center items-center text-center p-4 mt-4  ">
+  <section className=" bg-[url('/src/assets/backgroundimage.png')] bg-cover bg-center h-screen flex flex-col justify-center items-center text-center overflow-y-hidden  ">
     {/* import montserrat font */}
     <h1 className=" font-montserrat font-bold text-2xl sm:text-3xl md:text-4xl xl:text-6xl text-white p-4">Welcome to <span className="text-amber-500 ">ClimaQuest</span></h1>
 
@@ -12,7 +12,7 @@ const Welcome = () => {
 
     <button className=" bg-amber-500 px-3 py-2 rounded-lg hover:bg-amber-400 font-bold mt-4 md:text-2xl sm:text-sm text-white transition duration-300 hover:shadow-2xl hover:scale-x-105">
 
-      <Link to="/Dashboard"> Explore now</Link>
+      <Link to="/Dashboard "> Explore now</Link>
     </button>
    
   </section>

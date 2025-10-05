@@ -3,3 +3,7 @@
 @theme {
   --font-montserrat: "Montserrat", sans-serif;
 }
+
+*:not(input):not(textarea) {
+  caret-color: transparent;
+}
