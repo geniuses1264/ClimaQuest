@@ -34,7 +34,7 @@ const Navbar = () => {
 
         {/* Navigation */}
         <nav className="relative">
-          {/* Hamburger Button (Mobile Only) */}
+          {/* Hamburger Button  */}
           <button
             aria-label="Toggle navigation menu"
             aria-expanded={showMenu}
@@ -47,7 +47,7 @@ const Navbar = () => {
               stroke="currentColor"
               viewBox="0 0 24 24"
               strokeWidth="2"
-              strokeLinecap="round"
+              strokeLinecap="round"    
               strokeLinejoin="round"
             >
               <path d="M4 6h16M4 12h16M4 18h16" />
