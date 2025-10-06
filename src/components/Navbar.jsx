@@ -7,7 +7,7 @@ const Navbar = () => {
   // Automatically close mobile menu on resize to desktop view
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 768) setShowMenu(false);
+      if (window.innerWidth >= 788) setShowMenu(false);
     };
 
     window.addEventListener("resize", handleResize);
@@ -65,27 +65,27 @@ const Navbar = () => {
 
   <li>
              <Link to="/dashboard"   onClick={closeMenu}
-                  className="block px-2 py-2 hover:underline underline-offset-4 hover:text-green-600 transition duration-300  font-semibold"
+                  className="block px-1 py-1.5q hover:underline underline-offset-4 hover:text-green-600 transition duration-300  font-semibold"
                 >Dashboard</Link>
            </li>
            <li>
              <Link to="/weather"   onClick={closeMenu}
-                  className="block px-2 py-2 hover:underline underline-offset-4 hover:text-green-400 transition duration-300  font-semibold"
+                  className="block px-1 py-1.5q hover:underline underline-offset-4 hover:text-green-400 transition duration-300  font-semibold"
                 >Weather Details</Link>
            </li>
            <li>
              <Link to="/trip"   onClick={closeMenu}
-                  className="block px-2 py-2 hover:underline underline-offset-4 hover:text-green-400 transition duration-300  font-semibold"
+                  className="block px-1 py-1.5q hover:underline underline-offset-4 hover:text-green-400 transition duration-300  font-semibold"
                 >Trip Planner</Link>
            </li>
            <li>
              <Link to="/favorites"   onClick={closeMenu}
-                  className="block px-2 py-2 hover:underline underline-offset-4 hover:text-green-400 transition duration-300  font-semibold"
+                  className="block px-1 py-1.5q hover:underline underline-offset-4 hover:text-green-400 transition duration-300  font-semibold"
                 >Favorite</Link>
            </li>
            <li>
              <Link to="/about"   onClick={closeMenu}
-                  className="block px-2 py-2 hover:underline underline-offset-4 hover:text-green-400 transition duration-300   font-semibold"
+                  className="block px-1 py-1.5q hover:underline underline-offset-4 hover:text-green-400 transition duration-300   font-semibold"
                 >About</Link>
            </li>
 
