@@ -65,27 +65,27 @@ const Navbar = () => {
 
   <li>
              <Link to="/dashboard"   onClick={closeMenu}
-                  className="block px-1 py-1.5q hover:underline underline-offset-4 hover:text-green-600 transition duration-300  font-semibold"
+                  className="block px-1 py-1.5 hover:underline underline-offset-4 hover:text-green-600 transition duration-300  font-semibold"
                 >Dashboard</Link>
            </li>
            <li>
              <Link to="/weather"   onClick={closeMenu}
-                  className="block px-1 py-1.5q hover:underline underline-offset-4 hover:text-green-400 transition duration-300  font-semibold"
+                  className="block px-1 py-1.5 hover:underline underline-offset-4 hover:text-green-400 transition duration-300  font-semibold"
                 >Weather Details</Link>
            </li>
            <li>
              <Link to="/trip"   onClick={closeMenu}
-                  className="block px-1 py-1.5q hover:underline underline-offset-4 hover:text-green-400 transition duration-300  font-semibold"
+                  className="block px-1 py-1.5 hover:underline underline-offset-4 hover:text-green-400 transition duration-300  font-semibold"
                 >Trip Planner</Link>
            </li>
            <li>
              <Link to="/favorites"   onClick={closeMenu}
-                  className="block px-1 py-1.5q hover:underline underline-offset-4 hover:text-green-400 transition duration-300  font-semibold"
+                  className="block px-1 py-1.5 hover:underline underline-offset-4 hover:text-green-400 transition duration-300  font-semibold"
                 >Favorite</Link>
            </li>
            <li>
              <Link to="/about"   onClick={closeMenu}
-                  className="block px-1 py-1.5q hover:underline underline-offset-4 hover:text-green-400 transition duration-300   font-semibold"
+                  className="block px-1 py-1.5 hover:underline underline-offset-4 hover:text-green-400 transition duration-300   font-semibold"
                 >About</Link>
            </li>
 
