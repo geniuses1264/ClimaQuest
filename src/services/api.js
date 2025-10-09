@@ -1,9 +1,11 @@
 // Import axios for making API requests
 import axios from "axios";
 
+
+ // -- Helper to safely read and clean environment URLs --
+
 const readEnvUrl = (envKey, defaultUrl, label) => {
   let base = defaultUrl;
-
   try {
     const raw = (envKey || "").toString().trim();
     if (raw) {
@@ -16,44 +18,48 @@ const readEnvUrl = (envKey, defaultUrl, label) => {
   } catch (e) {
     console.warn(`[API] Env read error for ${label}:`, e);
   }
-
   return base;
 };
 
-// -- Weather API --
+// -- API CONFIGURATION --
+// 🌦 WEATHER API
+
 const WEATHER_BASE_URL = readEnvUrl(
   import.meta.env.VITE_WEATHER_BASE_URL,
   "https://api.weatherapi.com/v1",
-  "VITE_WEATHER_BASE_URL"
+  "Weather API Base URL"
 );
 const WEATHER_API_KEY = import.meta.env.VITE_WEATHER_API_KEY || "";
 
-// -- Pexels API --
+
+// 📸 PEXELS API
+
 const PEXELS_BASE_URL = readEnvUrl(
   import.meta.env.VITE_PEXELS_BASE_URL,
   "https://api.pexels.com",
-  "VITE_PEXELS_BASE_URL"
+  "Pexels API Base URL"
 );
 const PEXELS_API_KEY = import.meta.env.VITE_PEXELS_API_KEY || "";
 
-// -- TripGo API --
+
+// 🧭 TRIPGO API
+
 const TRIPGO_BASE_URL = readEnvUrl(
   import.meta.env.VITE_TRIPGO_BASE_URL,
-  "https://tripgo.skedgo.com/satapp/",
-  "VITE_TRIPGO_BASE_URL"
+  "https://tripgo.skedgo.com/satapp",
+  "TripGo API Base URL"
 );
 const TRIPGO_API_KEY = import.meta.env.VITE_TRIPGO_API_KEY || "";
 
-// -- Axios instances --
+
+// -- AXIOS INSTANCES --
+
 
 // Weather
 export const WeatherApi = axios.create({
   baseURL: WEATHER_BASE_URL,
   timeout: 15000,
-  headers: {
-    Accept: "application/json",
-    "Content-Type": "application/json",
-  },
+  headers: { Accept: "application/json", "Content-Type": "application/json" },
   params: { key: WEATHER_API_KEY },
 });
 
@@ -61,10 +67,7 @@ export const WeatherApi = axios.create({
 export const PexelsApi = axios.create({
   baseURL: PEXELS_BASE_URL,
   timeout: 15000,
-  headers: {
-    Accept: "application/json",
-    Authorization: PEXELS_API_KEY,
-  },
+  headers: { Accept: "application/json", Authorization: PEXELS_API_KEY },
 });
 
 // TripGo
@@ -78,10 +81,11 @@ export const TripGoApi = axios.create({
   },
 });
 
-// --- Weather API functions ---
+
+// -- WEATHER FUNCTIONS --
+
 export async function fetchWeatherData(location) {
   if (!location) throw new Error("Location is required");
-
   try {
     const response = await WeatherApi.get("current.json", { params: { q: location } });
     return response.data;
@@ -94,7 +98,6 @@ export async function fetchWeatherData(location) {
 export async function fetchForecastData(location, days = 3) {
   if (!location || !(Number.isInteger(days) && days > 0))
     throw new Error("Location and valid days are required");
-
   try {
     const response = await WeatherApi.get("forecast.json", {
       params: { q: location, days },
@@ -108,7 +111,6 @@ export async function fetchForecastData(location, days = 3) {
 
 export async function fetchAstronomyData(location, date) {
   if (!location || !date) throw new Error("Location and date are required");
-
   try {
     const response = await WeatherApi.get("astronomy.json", {
       params: { q: location, dt: date },
@@ -122,7 +124,6 @@ export async function fetchAstronomyData(location, date) {
 
 export async function fetchSearchData(query) {
   if (!query) throw new Error("Search query is required");
-
   try {
     const response = await WeatherApi.get("search.json", { params: { q: query } });
     return response.data;
@@ -132,14 +133,16 @@ export async function fetchSearchData(query) {
   }
 }
 
-// --- Pexels API functions ---
+
+// -- PEXELS FUNCTIONS --
+
 export async function searchPexelsVideos(query, per_page = 3) {
   if (!query) throw new Error("Search query is required");
   try {
     const res = await PexelsApi.get("/videos/search", { params: { query, per_page } });
     return res.data?.videos || [];
   } catch (error) {
-    console.error("Error fetching Pexels videos:", error);
+    console.error("[PexelsAPI] Error fetching videos:", error);
     return [];
   }
 }
@@ -150,23 +153,40 @@ export async function searchPexelsPhotos(query, per_page = 8) {
     const res = await PexelsApi.get("/v1/search", { params: { query, per_page } });
     return res.data?.photos || [];
   } catch (error) {
-    console.error("Error fetching Pexels photos:", error);
+    console.error("[PexelsAPI] Error fetching photos:", error);
     return [];
   }
 }
-// --- TripGo API functions ---
-export async function fetchTripOptions(from, to  ) {
+
+
+// -- TRIPGO FUNCTIONS--
+
+export async function fetchTripOptions(from, to) {
   if (!from || !to) throw new Error("From and To locations are required");
   try {
-   const response = await TripGoApi.get("/v1/trip", {
-  params: { from, to },
+    const response = await TripGoApi.get("/v1/trip", { params: { from, to } });
+    return response.data;
+  } catch (error) {
+    console.error("[TripGoAPI] Error fetching trip options:", error);
+    throw error;
+  }
+}
+
+// -- FETCHING LOCATION SUGGESTIONS --
+
+// This uses WeatherAPI's "search.json" endpoint to suggest locations
+export async function fetchLocationSuggestions(query) {
+  if (!query) throw new Error("Search query is required");
+
+  try {
+    const response = await WeatherApi.get("search.json", {
+      params: { q: query },
     });
 
-    return response.data;
-
+    // Return the list of matched locations
+    return response.data || [];
   } catch (error) {
-    console.error("[TripGoAPI] Error fetchnig trip options:", error);
-    throw error;
-    
+    console.error("[WeatherAPI] Error fetching location suggestions:", error);
+    return [];
   }
-} 
+}
