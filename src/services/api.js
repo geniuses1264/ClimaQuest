@@ -94,7 +94,19 @@ export async function fetchWeatherData(location) {
     throw error;
   }
 }
+ // -- fetch hourly forecast --
+export async function fetchHourlyForecast(location, hours = 7) {
+  try {
+    const data = await fetchForecastData(location, 1); // fetch 1-day forecast
+    const allHours = data.forecast.forecastday[0].hour;
+    return allHours.slice(0, hours);
+  } catch (error) {
+    console.error("[WeatherAPI] Error fetching hourly forecast:", error);
+    throw error;
+  }
+}
 
+// -- fetch multi-day forecast --
 export async function fetchForecastData(location, days = 3) {
   if (!location || !(Number.isInteger(days) && days > 0))
     throw new Error("Location and valid days are required");
@@ -108,7 +120,7 @@ export async function fetchForecastData(location, days = 3) {
     throw error;
   }
 }
-
+// -- fetch astronomy data --
 export async function fetchAstronomyData(location, date) {
   if (!location || !date) throw new Error("Location and date are required");
   try {
@@ -121,7 +133,7 @@ export async function fetchAstronomyData(location, date) {
     throw error;
   }
 }
-
+// --fetch search data --
 export async function fetchSearchData(query) {
   if (!query) throw new Error("Search query is required");
   try {
@@ -136,6 +148,7 @@ export async function fetchSearchData(query) {
 
 // -- PEXELS FUNCTIONS --
 
+// -- fetch videos from pexels --
 export async function searchPexelsVideos(query, per_page = 3) {
   if (!query) throw new Error("Search query is required");
   try {
@@ -146,7 +159,7 @@ export async function searchPexelsVideos(query, per_page = 3) {
     return [];
   }
 }
-
+// -- fetch photos from pexels --
 export async function searchPexelsPhotos(query, per_page = 8) {
   if (!query) throw new Error("Search query is required");
   try {
