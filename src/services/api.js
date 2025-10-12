@@ -185,6 +185,43 @@ export async function fetchTripOptions(from, to) {
   }
 }
 
+
+
+// Fetch popular destinations (predefined list)
+export async function fetchPopularDestinations() {
+  try {
+    const response = await TripGoApi.get("/v1/destinations/popular");
+    return response.data;
+  } catch (error) {
+    console.error("[TripGoAPI] Error fetching popular destinations:", error);
+    throw error;
+  }
+}
+
+// Fetch search options (user search)
+export async function fetchSearchOptions(query) {
+  if (!query) throw new Error("Search query is required");
+  try {
+    const response = await TripGoApi.get("/v1/search", { params: { query } });
+    return response.data;
+  } catch (error) {
+    console.error("[TripGoAPI] Error fetching search options:", error);
+    throw error;
+  }
+}
+
+// Fetch detailed trip info (optional, for trip planner details page)
+export async function fetchTripInfo(tripId) {
+  if (!tripId) throw new Error("Trip ID is required");
+  try {
+    const response = await TripGoApi.get(`/v1/trip/${tripId}`);
+    return response.data;
+  } catch (error) {
+    console.error("[TripGoAPI] Error fetching trip info:", error);
+    throw error;
+  }
+}
+
 // -- FETCHING LOCATION SUGGESTIONS --
 
 // This uses WeatherAPI's "search.json" endpoint to suggest locations
