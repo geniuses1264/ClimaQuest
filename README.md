@@ -1,16 +1,135 @@
-# React + Vite
+# 🌤️ Climber Quest
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> A sleek, modern weather forecast web app built with **React**, **Tailwind CSS**, and **OpenWeather API** — providing real-time weather insights and a 7-day forecast.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📋 Quick Copy
+Copy everything in this README easily 👇  
+**[📋 Copy All](#)** *(Click to select and copy all text)*
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Project Overview
 
-## Expanding the ESLint configuration
+**Climber Quest** is a modern weather web app designed to help users stay informed about weather conditions across any location. It integrates geolocation and search features, displays detailed forecasts, and offers a visually appealing interface powered by **React** and **Tailwind CSS**.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The app is built to be **simple, accurate, and responsive**, giving users access to:
+
+- Real-time current weather updates  
+- A detailed **7-day forecast**  
+- Hourly weather breakdown  
+- Astronomy information (sunrise, sunset, moon phase)  
+- A clean, minimal, and elegant design  
+
+---
+
+## 🌍 Core Features
+
+### 🧭 Search & Geolocation
+- Automatically detects your location (with permission)
+- Option to manually search for any city or region
+
+### 🌦️ 7-Day Forecast
+- Fetches weather data from **OpenWeather API**
+- Displays minimum and maximum temperatures for each day
+- Uses friendly emojis for a clean and modern look
+
+### 🕒 Hourly Forecast
+- Shows upcoming hourly temperature trends and weather conditions
+
+### 🌌 Astronomy Panel
+- Displays sunrise, sunset, and moon data for your current or searched location
+
+### 💬 Dynamic Greeting
+- Displays a friendly message based on time of day (e.g., *Good Morning ☀️*, *Good Evening 🌙*)
+
+### 🦶 Footer
+- Displays project name, copyright,
+  and your name: **Ebenezer**
+
+---
+
+## 🛠️ Technologies Used
+
+| Tool | Purpose |
+|------|----------|
+| **React.js** | Core framework for building the UI |
+| **Tailwind CSS** | For modern, responsive, and clean styling |
+| **OpenWeather API** | Provides 7-day weather forecast data |
+| **Framer Motion** | Adds smooth animations and transitions |
+| **Date-fns** | For date formatting in forecasts |
+| **Session Storage** | Caches weather data for faster reloads |
+
+---
+
+## 📁 Project Structure
+
+
+src/
+├── components/
+│ ├── SearchBar.jsx
+│ ├── Weather.jsx
+│ ├── HourlyStrip.jsx
+│ ├── DailyGrid.jsx
+  |__ Navbar.jsx
+│ ├── AstronomyPanel.jsx
+│ └── Footer.jsx
+│ └── Skeletons.jsx
+│ └── ImageGallery.jsx
+│ └── WeatherCard.jsx
+   
+│
+├── pages/
+│ └── Dashboard.jsx
+│ └── WeatherPage.jsx
+│ └── GTripPlanner.jsx
+│ └── Favorite.jsx
+│ └── About.jsx
+│
+├── services/
+│ └── api.js
+│
+├── App.jsx
+├── main.js
+└── index.css
+
+---
+
+## 🌱 Future Updates
+
+🚧 **Coming Soon**
+- **Trip Planner Page** → Plan trips with weather insights for chosen destinations  
+- **Favorites Page** → Save favorite locations for quick weather access  
+
+These features will be integrated in the next update to make **Climber Quest** more personalized and useful.
+
+---
+
+## 🧠 How It Works
+
+1. On load, the app requests permission to access your location.  
+2. It fetches **current weather**, **7-day forecast**, and **astronomy** data.  
+3. You can search any city manually if you deny geolocation.  
+4. The UI updates dynamically to show:
+   - Current temperature and condition  
+   - 7-day forecast cards  
+   - Hourly temperature strip  
+   - Astronomy info  
+
+---
+
+## 👨‍💻 Developer
+
+**Ebenezer**  
+A passionate front-end developer crafting user-friendly web experiences.  
+> _“Blending weather data with artful design.”_
+
+---
+
+## ⚡ Quick Start (Local Setup)
+
+1. **Clone the repo**
+   ```bash
+   git clone https://github.com/yourusername/climber-quest.git
+   cd climber-quest
