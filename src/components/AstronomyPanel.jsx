@@ -1,8 +1,8 @@
-/**
- * AstronomyPanel.jsx
- * - Displays simple astronomy info: sunrise, sunset, moonrise, moonset, moon_phase, moon_illumination
- * - If astronomy prop is missing, shows a small loader or message
- */
+
+ // AstronomyPanel.jsx
+// Displays simple astronomy info: sunrise, sunset, moonrise, moonset, moon_phase, moon_illumination
+ //If astronomy prop is missing, shows a small loader or message
+
 
 import React from "react";
 

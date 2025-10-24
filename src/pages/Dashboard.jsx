@@ -1,12 +1,18 @@
-import WeatherCard  from "../components/WeatherCard"
+
+import WeatherCard from "../components/WeatherCard";
 
 const Dashboard = () => {
   return (
-    <div>
-       <h1>Dashboard</h1>
-       <WeatherCard fallbackLocation="New york" destination ="Central Park, New York, Ghana, us" />
-    </div>
-  )
-}
+    <div
+      className="relative  bg-[url('/src/assets/Dashboard.jpg')] min-h-screen bg-cover bg-center bg-no-repeat flex items-center justify-center pt-20"
+      
+    >
+     
 
-export default Dashboard
+        <WeatherCard />
+      </div>
+
+  );
+};
+
+export default Dashboard;

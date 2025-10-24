@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 # environment variable files
 .env
+
+ThemeToggle.jsx
+utils

@@ -18,7 +18,7 @@ const Navbar = () => {
   const closeMenu = () => setShowMenu(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-10 bg-amber-300/5 backdrop-blur-2xl shadow-sm py-2 px-4">
+    <header className="fixed top-0 left-0 right-0 z-10 bg-amber-300/5 backdrop-blur-2xl shadow-sm py-2 px-4 md:text-white">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo Section */}
         <div className="flex items-center space-x-2">
@@ -27,7 +27,7 @@ const Navbar = () => {
             alt="ClimaQuest logo"
             className="h-6 w-6 md:h-10 md:w-10"
           />
-          <h1 className="font-montserrat text-2xl md:text-3xl font-bold tracking-tight">
+          <h1 className="font-montserrat text-2xl md:text-3xl font-bold tracking-tight text-amber-50">
             ClimaQuest
           </h1>
         </div>
@@ -79,7 +79,7 @@ const Navbar = () => {
                 >Trip Planner</Link>
            </li>
            <li>
-             <Link to="/favorites"   onClick={closeMenu}
+             <Link to="/favorite"   onClick={closeMenu}
                   className="block px-1 py-1.5 hover:underline underline-offset-4 hover:text-green-400 transition duration-300  font-semibold"
                 >Favorite</Link>
            </li>

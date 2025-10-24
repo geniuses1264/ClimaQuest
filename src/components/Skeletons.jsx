@@ -1,6 +1,5 @@
-/**
- * Skeletons.jsx - small skeleton components with shimmer animation (inline style injection below)
- */
+// Skeletons.jsx - small skeleton components with shimmer animation (inline style injection below)
+
 
 import React from "react";
 

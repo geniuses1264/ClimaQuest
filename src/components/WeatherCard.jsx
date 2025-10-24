@@ -13,7 +13,7 @@ export default function WeatherCard({ hours = 7 }) {
   const [error, setError] = useState(null);
   const [weather, setWeather] = useState(null);
   const [hourly, setHourly] = useState([]);
-  const [daily, setDaily] = useState([]);
+ 
 
   // Search states
   const [searchQuery, setSearchQuery] = useState("");
@@ -23,12 +23,14 @@ export default function WeatherCard({ hours = 7 }) {
   const [isFocused, setIsFocused] = useState(false); // controls blinking cursor visibility
 
   // --- Get Current Time Greeting ---
-  const getGreeting = () => {
-    const hour = new Date().getHours();
-    if (hour < 12) return "Good Morning ☀️";
-    if (hour < 18) return "Good Afternoon 🌤️";
-    return "Good Evening 🌙";
-  };
+ const getGreeting = () => {
+  const hour = new Date().getHours();
+
+  if (hour < 12) return "Good Morning ☕";
+  if (hour < 18) return "Good Afternoon 👋";
+  return "Good Evening 🌇";
+};
+
 
   // --- Detect Geolocation ---
   useEffect(() => {
@@ -79,8 +81,7 @@ export default function WeatherCard({ hours = 7 }) {
         const start = Number.isNaN(hourIndex) ? new Date().getHours() : hourIndex;
         setHourly(dayHours.slice(start, start + hours));
 
-        // --- Daily forecast ---
-        setDaily(forecastData?.forecast?.forecastday || []);
+      
       } catch (err) {
         console.error("[WeatherCard] load error:", err);
         setError("Failed to fetch weather data.");
@@ -166,7 +167,7 @@ export default function WeatherCard({ hours = 7 }) {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center px-4 overflow-x-hidden">
-        <div className="flex flex-col items-center gap-6 w-full max-w-4xl">
+        <div className="flex flex-col items-center gap-6 w-full ">
           {/* Centered search bar above skeleton */}
           <div className="w-full px-4">
             <form
@@ -332,7 +333,7 @@ export default function WeatherCard({ hours = 7 }) {
                 />
               )}
             </div>
-
+             
             <button
               type="submit"
               className="bg-green-600 text-white px-3 py-2 rounded-md hover:bg-green-700 transition text-sm"
@@ -417,23 +418,7 @@ export default function WeatherCard({ hours = 7 }) {
               </div>
             </section>
 
-            {/* Daily Forecast (horizontal scroll on small screens, grid on larger) */}
-            <section className="w-full mt-6 px-2">
-              <h3 className="text-blue-100 font-semibold mb-2">7-Day Forecast</h3>
-
-              {/* On small screens allow horizontal scrolling; on md+ show grid */}
-              <div className="md:grid md:grid-cols-4 lg:grid-cols-7 md:gap-4">
-                {/* For md+ we render grid by wrapping children normally.
-                    For small screens, we render a horizontal scrollable row. */}
-                <div className="flex md:block space-x-4 md:space-x-0 overflow-x-auto py-2 md:overflow-visible">
-                  {daily.map((d, idx) => (
-                    <div key={idx} className="md:mb-0">
-                      <DailyCard day={d} />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </section>
+            
           </div>
         </article>
       </div>
