@@ -176,19 +176,19 @@ export default function About() {
 
             <div className="flex items-center gap-3 mt-3 md:mt-0 justify-center md:justify-end">
               {/* Social icons styled neon-blue */}
-              <a href="#" aria-label="GitHub" className="p-2 rounded-md bg-transparent hover:shadow-[0_6px_20px_rgba(14,165,233,0.12)] transition">
+              <a href="https://github.com/geniuses1264"  target="_blank" aria-label="GitHub" className="p-2 rounded-md bg-transparent hover:shadow-[0_6px_20px_rgba(14,165,233,0.12)] transition">
                 <svg className="w-5 h-5 sm:w-6 sm:h-6 text-sky-200" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
                   <path d="M12 .5C5.73.5.75 5.48.75 11.75c0 4.9 3.16 9.06 7.55 10.53.55.1.75-.24.75-.53 0-.26-.01-1.14-.01-2.07-3.07.67-3.72-1.48-3.72-1.48-.5-1.28-1.22-1.62-1.22-1.62-.99-.68.08-.67.08-.67 1.1.08 1.68 1.13 1.68 1.13.97 1.66 2.54 1.18 3.16.9.1-.7.38-1.18.69-1.45-2.45-.28-5.02-1.22-5.02-5.43 0-1.2.43-2.2 1.13-2.98-.12-.28-.49-1.41.11-2.94 0 0 .92-.3 3.02 1.13A10.5 10.5 0 0112 6.8c.93.004 1.86.126 2.73.37 2.09-1.43 3.01-1.13 3.01-1.13.6 1.53.23 2.66.11 2.94.7.78 1.13 1.78 1.13 2.98 0 4.23-2.57 5.15-5.02 5.42.39.34.73 1.03.73 2.08 0 1.5-.01 2.71-.01 3.08 0 .29.2.64.76.53 4.39-1.48 7.54-5.64 7.54-10.53C23.25 5.48 18.27.5 12 .5z"/>
                 </svg>
               </a>
 
-              <a href="#" aria-label="Twitter" className="p-2 rounded-md bg-transparent hover:shadow-[0_6px_20px_rgba(14,165,233,0.12)] transition">
+              <a href="https://x.com/@general6genius2"  target="_blank" aria-label="Twitter" className="p-2 rounded-md bg-transparent hover:shadow-[0_6px_20px_rgba(14,165,233,0.12)] transition">
                 <svg className="w-5 h-5 sm:w-6 sm:h-6 text-sky-200" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
                   <path d="M23 4.56c-.8.36-1.7.6-2.62.71a4.52 4.52 0 001.98-2.5 9.03 9.03 0 01-2.86 1.09 4.51 4.51 0 00-7.69 4.12A12.82 12.82 0 013 3.88a4.5 4.5 0 001.4 6.02 4.48 4.48 0 01-2.04-.56v.06a4.51 4.51 0 003.62 4.42c-.48.13-.99.2-1.51.08a4.52 4.52 0 004.22 3.13A9.05 9.05 0 012 19.54 12.78 12.78 0 008.29 21c7.55 0 11.69-6.27 11.69-11.71v-.53A8.36 8.36 0 0023 4.56z"/>
                 </svg>
               </a>
 
-              <a href="#" aria-label="LinkedIn" className="p-2 rounded-md bg-transparent hover:shadow-[0_6px_20px_rgba(14,165,233,0.12)] transition">
+              <a href="https://www.linkedin.com/in/ebenezer-attipoe-45771b251/" aria-label="LinkedIn" target="_blank" className="p-2 rounded-md bg-transparent hover:shadow-[0_6px_20px_rgba(14,165,233,0.12)] transition">
                 <svg className="w-5 h-5 sm:w-6 sm:h-6 text-sky-200" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
                   <path d="M4.98 3.5a2.5 2.5 0 11.02 0H4.98zM3 8.98h4v12H3v-12zM9 8.98h3.82v1.64h.06c.53-1 1.83-2.06 3.76-2.06 4.03 0 4.78 2.65 4.78 6.09v6.33H19v-5.6c0-1.34-.03-3.06-1.86-3.06-1.86 0-2.15 1.45-2.15 2.96v5.7H9v-12z"/>
                 </svg>
