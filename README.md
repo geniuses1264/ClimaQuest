@@ -1,23 +1,20 @@
-# 🌤️ Climber Quest
+# 🌤️ ClimaQuest
 
-> A sleek, modern weather forecast web app built with **React**, **Tailwind CSS**, and **OpenWeather API** — providing real-time weather insights and a 7-day forecast.
+> A sleek, modern weather forecast web app built with **React**, **Tailwind CSS**, and **WeatherAPI** — providing real-time weather insights and a 7-day forecast.
 
 ---
 
-## 📋 Quick Copy
-Copy everything in this README easily 👇  
-**[📋 Copy All](#)** *(Click to select and copy all text)*
 
 ---
 
 ## 🚀 Project Overview
 
-**Climber Quest** is a modern weather web app designed to help users stay informed about weather conditions across any location. It integrates geolocation and search features, displays detailed forecasts, and offers a visually appealing interface powered by **React** and **Tailwind CSS**.
+**ClimaQuest** is a modern weather web app designed to help users stay informed about weather conditions across any location. It integrates geolocation and search features, displays detailed forecasts, and offers a visually appealing interface powered by **React** and **Tailwind CSS**.
 
 The app is built to be **simple, accurate, and responsive**, giving users access to:
 
 - Real-time current weather updates  
-- A detailed **7-day forecast**  
+- A detailed **3-day forecast**  
 - Hourly weather breakdown  
 - Astronomy information (sunrise, sunset, moon phase)  
 - A clean, minimal, and elegant design  
@@ -30,8 +27,8 @@ The app is built to be **simple, accurate, and responsive**, giving users access
 - Automatically detects your location (with permission)
 - Option to manually search for any city or region
 
-### 🌦️ 7-Day Forecast
-- Fetches weather data from **OpenWeather API**
+### 🌦️ 3-Day Forecast
+- Fetches weather data from **WeatherAPI**
 - Displays minimum and maximum temperatures for each day
 - Uses friendly emojis for a clean and modern look
 
@@ -46,7 +43,7 @@ The app is built to be **simple, accurate, and responsive**, giving users access
 
 ### 🦶 Footer
 - Displays project name, copyright,
-  and your name: **Ebenezer**
+  and developer **Ebenezer**
 
 ---
 
@@ -56,7 +53,7 @@ The app is built to be **simple, accurate, and responsive**, giving users access
 |------|----------|
 | **React.js** | Core framework for building the UI |
 | **Tailwind CSS** | For modern, responsive, and clean styling |
-| **OpenWeather API** | Provides 7-day weather forecast data |
+| **WeatherAPI** | Provides 7-day weather forecast data |
 | **Framer Motion** | Adds smooth animations and transitions |
 | **Date-fns** | For date formatting in forecasts |
 | **Session Storage** | Caches weather data for faster reloads |
@@ -102,14 +99,14 @@ src/
 - **Trip Planner Page** → Plan trips with weather insights for chosen destinations  
 - **Favorites Page** → Save favorite locations for quick weather access  
 
-These features will be integrated in the next update to make **Climber Quest** more personalized and useful.
+These features will be integrated in the next update to make **ClimaQuest** more personalized and useful.
 
 ---
 
 ## 🧠 How It Works
 
 1. On load, the app requests permission to access your location.  
-2. It fetches **current weather**, **7-day forecast**, and **astronomy** data.  
+2. It fetches **current weather**, **3-day forecast**, and **astronomy** data.  
 3. You can search any city manually if you deny geolocation.  
 4. The UI updates dynamically to show:
    - Current temperature and condition  
@@ -131,5 +128,5 @@ A passionate front-end developer crafting user-friendly web experiences.
 
 1. **Clone the repo**
    ```bash
-   git clone https://github.com/yourusername/climber-quest.git
-   cd climber-quest
+   git clone https://github.com/geniuses1264/ClimaQuest.git
+   cd ClimaQuest
