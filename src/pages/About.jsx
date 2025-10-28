@@ -32,7 +32,7 @@ export default function About() {
 
   return (
     // keep overflow-x-hidden to avoid horizontal scroll from decorative elements
-    <main className="min-h-screen w-full flex items-center justify-center p-4 sm:p-6 md:p-10 bg-gradient-to-br from-slate-900 to-sky-800 overflow-x-hidden pt-20 ">
+    <main className="min-h-screen w-full flex items-center justify-center p-4 sm:p-6 md:p-10 bg-gradient-to-br from-slate-900 to-sky-800 overflow-x-hidden sm:pt-20 ">
       {/* Decorative blurred shapes - responsive sizing & transformed placement to avoid layout overflow */}
       <motion.div
         className="pointer-events-none absolute -z-10 rounded-full mix-blend-screen opacity-30
@@ -64,8 +64,8 @@ export default function About() {
       />
 
       <section className="relative w-full max-w-5xl">
-        <div className="bg-white/6 backdrop-blur-lg border border-white/10 rounded-2xl shadow-xl p-4 sm:p-6 md:p-10 overflow-hidden">
-          <header className="text-center mb-5 sm:mb-8 md:mb-10 px-2 sm:pt-20">
+        <div className="bg-white/6 backdrop-blur-lg border border-white/10 rounded-2xl shadow-xl p-4 sm:p-6 md:p-10 overflow-hidden mt-15 sm:mt-15 md:mt-10">
+          <header className="text-center mb-5 sm:mb-8 md:mb-10 px-15  ">
             <motion.h1
               className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white"
               initial={{ y: -8, opacity: 0 }}
